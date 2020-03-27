@@ -1,0 +1,28 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-container > * {
+    width: 100%;
+  }
+
+  .signup_width{
+    width:90%;
+  }
+
+
+  .signup_left{
+      float:right;
+  }
+
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  
+  .example-card {
+    max-width: 100%;
+  }

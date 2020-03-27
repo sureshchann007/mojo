@@ -1,0 +1,27 @@
+<section>
+    <div class="layer1">
+        <form #userForm="ngForm" id="formId">            
+            <div class="group">
+                <input type="text" id="email" [(ngModel)]="user.email" name="email" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email Id :</label>
+            </div>
+
+            <div class="group">
+                <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password :</label>
+            </div>
+           
+            <mat-dialog-actions>
+                <span class="example-fill-remaining-space">
+                    <button (click)="loginUser(user)">Sign In</button>
+                </span>             
+            </mat-dialog-actions>
+        </form>
+    </div>
+    <div class="layer2"></div>
+</section>
+

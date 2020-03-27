@@ -1,0 +1,51 @@
+<h3>Master / Master Update</h3>
+<form [formGroup]="updateMasterForm" novalidate>
+    <mat-card class="example-card">
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>
+                    <mat-form-field class="masterinput_width">
+                        <mat-label>Product Code</mat-label>
+                        <input type="text" matInput id="productCode" formControlName="productCode" name="productCode"
+                            placeholder="Product Code" />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="masterinput_width">
+                        <mat-label>Product Name</mat-label>
+                        <input type="text" matInput id="productName" formControlName="productName" name="productName"
+                            placeholder="Product Name" />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>
+                    <mat-form-field class="masterinput_width">
+                        <mat-label>Product Count</mat-label>
+                        <input type="text" matInput id="productCount" formControlName="productCount" name="productCount"
+                            placeholder="Product Count" />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field class="masterinput_width">
+                        <mat-label>Product Price</mat-label>
+                        <input type="text" matInput id="productPrice" formControlName="productPrice" name="productPrice"
+                            placeholder="Product Price" />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>                
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>                   
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <button mat-raised-button class="add" (click)="uploadMaster()">Update</button>&nbsp;&nbsp;&nbsp;
+                    <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</form>

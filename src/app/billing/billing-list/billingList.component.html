@@ -1,0 +1,48 @@
+<!-- <ag-grid-angular #agGrid style="width: 100%; height: 530px;" class="ag-theme-balham"
+    [gridOptions]="gridOptions"
+    [columnDefs]="columnDefs"
+    [showToolPanel]="showToolPanel"
+    [rowData]="rowData"
+    [defaultColDef]="defaultColDef"
+    [enableCellChangeFlash]="true"
+    (gridReady)="onGridReady($event)"
+    ></ag-grid-angular> -->
+
+    <ag-grid-angular
+      #agGrid
+      style="width: 100%; height: 530px;"
+      id="myGrid"
+      class="ag-theme-balham"
+      [modules]="modules"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [columnTypes]="columnTypes"
+      [rowData]="rowData"
+      [groupDefaultExpanded]="groupDefaultExpanded"
+      [suppressAggFuncInHeader]="true"
+      [enableCellChangeFlash]="true"
+      [animateRows]="true"
+      (gridReady)="onGridReady($event)"
+      (cellValueChanged)="onCellValueChanged($event)"
+
+    ></ag-grid-angular>
+
+<!-- 
+    <ag-grid-angular
+    #agGrid
+    style="width: 100%; height: 530px;"
+    id="myGrid"
+    class="ag-theme-balham"
+    [modules]="modules"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [columnTypes]="columnTypes"
+    [rowData]="rowData"
+    [groupDefaultExpanded]="groupDefaultExpanded"
+    [suppressAggFuncInHeader]="true"
+    [enableCellChangeFlash]="true"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)"
+
+  ></ag-grid-angular> -->

@@ -1,0 +1,19 @@
+#main_with{
+    width: 95%;
+    height: 80%;
+    margin: 1% 0% 0% 1.5%;    
+    background-color: #312f2f;
+}
+
+#text{
+    color: blue;
+}
+
+
+#pageButton{
+margin: 1.5%;
+}
+
+#logout{
+float: right;
+}

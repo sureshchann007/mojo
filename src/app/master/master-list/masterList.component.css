@@ -1,0 +1,19 @@
+#main_with{
+    width: 95%;
+    height: 80%;
+    margin: 1% 0% 0% 1.5%;    
+    background-color: #424040;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+#addIcon{
+    float: right;
+}

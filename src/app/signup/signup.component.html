@@ -1,0 +1,74 @@
+<form #userForm="ngForm">
+    <div>
+        <h1 mat-dialog-title>Sign Up</h1>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="signup_width">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput id="firstName" [(ngModel)]="user.firstName" name="firstName"
+                            placeholder="First Name" required />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="signup_width">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput id="lastName" [(ngModel)]="user.lastName" name="lastName"
+                            placeholder="Last Name" required />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                  </mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="signup_width">
+                        <mat-label>UserName</mat-label>
+                        <input type="text" matInput id="email" [(ngModel)]="user.email" name="email" placeholder="Email"
+                            required />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="signup_width">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput id="password" [(ngModel)]="user.password" name="password"
+                            placeholder="Password" required />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline" class="signup_width">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="text" matInput id="phoneNumber" [(ngModel)]="user.phoneNumber" name="phoneNumber"
+                            placeholder="phoneNumber" required />
+                        <mat-icon matSuffix></mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-select placeholder="Select Role" id="role" [(ngModel)]="user.role" name="role">
+                            <mat-option value="ADMIN">Admin</mat-option>
+                            <mat-option value="USER">User</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>          
+        </mat-card-content>
+    </mat-card>
+    <div>
+        <mat-dialog-actions>
+            <span class="example-fill-remaining-space">
+                <!-- <button class="mat-raised-button" (click)="loginUser(user)">Sign In</button> -->
+            </span>
+            <span>
+                <button class="mat-raised-button" (click)="saveUser(user,userForm)">Submit</button>
+            </span>
+        </mat-dialog-actions>
+
+    </div>    
+</form>
