@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'https://mojojo-app.herokuapp.com',
+  //apiUrl: 'http://localhost:8080',
 };
 
 /*

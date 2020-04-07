@@ -24,6 +24,7 @@ export class BillingListComponent implements OnInit, AfterViewInit {
     public columnTypes;
     public rowData;
     public groupDefaultExpanded;
+    public getTotalGrandAmt;
     //default
 
     // List
@@ -31,7 +32,7 @@ export class BillingListComponent implements OnInit, AfterViewInit {
     fetchedProductCode: any;
     // List
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,private router:Router) {
         
     }
 
@@ -41,6 +42,7 @@ export class BillingListComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.productCode();
         this.getbillingList();
+        this.rowData = getRowData()
 
     }
 
@@ -181,6 +183,7 @@ export class BillingListComponent implements OnInit, AfterViewInit {
                 if (rowNode.data['productQuantity'] != null && rowNode.data['productactualPrice'] != null)
                     var total = rowNode.data['productQuantity'] * rowNode.data['productactualPrice'];
                 target[element] += Number(total.toFixed(2));
+                this.getTotalGrandAmt = target[element];
             });
             if (target[element])
                 target[element] = `Total: ${target[element].toFixed(2)}`;
@@ -208,11 +211,43 @@ export class BillingListComponent implements OnInit, AfterViewInit {
         let productPrice = fetchproductPrice.productPrice        
         return productPrice;
     }
+
+    save(){
+        let listBean= [];
+        
+        rowData.forEach(function (value) {
+            if(value.productCode != null && value.productCode != ''){
+                listBean.push(value)
+            }
+        });
+      
+
+        var bean = {
+            'listBean':listBean,
+            'totalGrandAmt':this.getTotalGrandAmt
+        }
+        this.userService.saveBilling(bean).subscribe(data=> {
+            
+            if(data){
+                this.router.navigate(['/Invoice-List']);                
+            }
+        });
+        }
+
+        reset(){
+            
+            // rowData = [];
+            // this.gridApi.setRowData([]);            
+            // this.ngOnInit();
+            
+        }
+    
+
 }
 
-
+var rowData = [];
 function getRowData() {
-    var rowData = [];
+    
     for (var i = 0; i < 500; i++) {
         rowData.push({
             productCode: '',
@@ -223,6 +258,7 @@ function getRowData() {
     }
     return rowData;
 }
+
 
 
 // cleanData(){

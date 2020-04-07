@@ -10,6 +10,7 @@ import { MasterListComponent } from '../master/master-list/masterList.component'
 import { MasterAddComponent } from '../master/master-add/masterAdd.component';
 import { MasterEditComponent } from '../master/master-edit/masterEdit.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { InvoiceListComponent } from '../invoice/invoice-list/invoiceList.component';
 
 
 
@@ -24,6 +25,6 @@ import { AgGridModule } from 'ag-grid-angular';
         providers: [DatePipe],
         entryComponents:[],
         schemas:[CUSTOM_ELEMENTS_SCHEMA],
-        declarations:[BillingListComponent,MasterListComponent,MasterAddComponent,MasterEditComponent]
+        declarations:[BillingListComponent,MasterListComponent,MasterAddComponent,MasterEditComponent,InvoiceListComponent]
 })
 export class HeaderConfigComponentModule{}

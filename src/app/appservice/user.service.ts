@@ -111,4 +111,12 @@ export class UserService {
     return this.http.get(`${environment.apiUrl}/Master/productCode`);
   }
 
+  saveBilling(saveObj:any){
+    return this.http.post(`${environment.apiUrl}/Billing/saveBilling`,saveObj);
+  }
+
+  getinvoiceList(){
+    return this.http.get(`${environment.apiUrl}/Billing/holelist`);
+  }
+
 }
