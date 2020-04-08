@@ -1,0 +1,21 @@
+Java 
+--change appilcation.properties
+--copy the hole project and past it into document/git folder
+--open github desktop in your pc and commit the code on github
+
+
+##################################################################
+
+Angular 8
+--change environment.ts
+--change server.js
+--change package.json
+--check
+----node server.js
+----ng build --aot
+----git add .
+----git status
+git commit -m "node wrapper"
+git push
+
+##################################################################

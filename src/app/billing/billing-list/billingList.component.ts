@@ -42,7 +42,7 @@ export class BillingListComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.productCode();
         this.getbillingList();
-        this.rowData = getRowData()
+        //this.rowData = getRowData()
 
     }
 
@@ -229,16 +229,17 @@ export class BillingListComponent implements OnInit, AfterViewInit {
         this.userService.saveBilling(bean).subscribe(data=> {
             
             if(data){
-                this.router.navigate(['/Invoice-List']);                
+                this.router.navigate(['/Invoice-List']);    
+                this.reset();            
             }
         });
         }
 
         reset(){
             
-            // rowData = [];
-            // this.gridApi.setRowData([]);            
-            // this.ngOnInit();
+            rowData = [];
+            this.gridApi.setRowData([]);            
+            this.rowData = getRowData()
             
         }
     
