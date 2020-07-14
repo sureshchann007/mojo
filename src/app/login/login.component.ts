@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   // Declaration Parts
 
   constructor(private userService:UserService,private route: ActivatedRoute,private router:Router,public dialogRef:MatDialog,public snackBar: MatSnackBar){
-    if (this.userService.currentUserValue) { 
+    if (this.userService.currentUserValue) {
       this.router.navigate(['/']);
     }
   }
@@ -47,15 +47,15 @@ loginUser(user:any){
                 duration: 2000,
               });
           }
-          
+
         }
-          
+
       },
       error => {
-          this.error = error;    
+          this.error = error;
           this.snackBar.open("Username & Password is incorrect", "close", {
             duration: 2000,
-          });     
+          });
       });
 }
 

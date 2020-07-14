@@ -37,29 +37,24 @@ export class MasterListComponent implements OnInit , AfterViewInit{
     }
 
     getallMasterList(){
-        this.userService.getmasterUser().subscribe((data : MasterBean[])=> {
+        this.userService.getmasterUser().subscribe(data=> {
             console.log(data)
-            //let data: MasterBean[] = [{'masterId' : 1, 'productCode' : 'MA0001', 'productName':'Oil', 'productCount':10,'productPrice':50}]
-            this.dataSource = new MatTableDataSource(data);
-              this.dataSource.paginator = this.paginator;
-              this.dataSource.sort = this.sort;
-            
         });
-          
+
     }
 
       addMaster(){
         this.router.navigate(['/Master-Add']);
       }
-  
-      deleteMaster(posterId){        
+
+      deleteMaster(posterId){
         this.userService.deleteMaster(posterId).subscribe(data => {
           this.ngOnInit();
-        })      
+        })
       }
-  
-      editMaster(posterId){        
-        this.router.navigate(['/Master-Edit', posterId]);        
+
+      editMaster(posterId){
+        this.router.navigate(['/Master-Edit', posterId]);
       }
 
 }
